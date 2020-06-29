@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import {DataTablesModule} from 'angular-datatables';
 import { MedicineCreateComponent } from './medicine-create/medicine-create.component';
+import { PatientSearchComponent } from './patient-search/patient-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MedicineCreateComponent } from './medicine-create/medicine-create.compo
     PatientUpdateComponent,
     PatientViewComponent,
     PatientDeleteComponent,
-    MedicineCreateComponent
+    MedicineCreateComponent,
+    PatientSearchComponent
   ],
   imports: [
     BrowserModule,
