@@ -24,4 +24,11 @@ export class PatientService {
   deletePartner(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/partner-delete/${id}`, { responseType: 'text' });
   }
+  getPatientbyid(id: number): Observable<any> {
+    // return this.http.get(`${this.baseUrl}/partner-delete/${id}`, { responseType: 'text' });
+    return this.http.get("assets/data1.json");
+  }
+  updatePatient(patient: object): Observable<object> {
+    return this.http.put(`${this.baseUrl}`,patient);
+  }
 }
