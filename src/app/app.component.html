@@ -1,0 +1,43 @@
+<div class="text-capitalize font-weight-normal p-3 mb-2 bg-gradient-warning text-dark text-center " >
+<h1 >ABC Hospital Management System</h1>
+  <div class="row">
+    <div class="col-2 offset-3">
+      <div class="dropdown ">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+          Patient
+        </button>
+        <div class="dropdown-menu">
+          <a routerLink="create-patient" class="dropdown-item">Create Patient</a>
+          <a routerLink="update-patient" class="dropdown-item">Update Patient</a>
+          <a routerLink="delete-patient" class="dropdown-item">Delete Patient</a>
+          <a routerLink="view-all-patient" class="dropdown-item">View-All-Patient</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 ">
+      <div class="dropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+          Pharmacy
+        </button>
+        <div class="dropdown-menu">
+          <a routerLink="add-student" class="dropdown-item" class="btn btn-primary active" role="button">Create
+            Patient</a>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-2 ">
+      <div class="dropdown">
+        <button type="button" class="btn btn-secondary dropdown-toggle " data-toggle="dropdown">
+          Diagnostics
+        </button>
+        <div class="dropdown-menu">
+          <a routerLink="add-student" class="dropdown-item" class="btn btn-primary active" role="button">Create
+            Patient</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<router-outlet > </router-outlet>

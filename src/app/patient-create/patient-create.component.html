@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h3>Patient Registration</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div [hidden]="submitted" style="width: 300px;">
+            <form [formGroup]="patient_Create_form" (ngSubmit)="savePatient()">
+                <div class="form-group">
+                    <label for="name">SSN_ID*</label>
+                    <input type="number" onkeypress="if (this.value.length > 8) return false;" class="form-control"
+                        formControlName="patient_SSNID" placeholder="Enter 9-digit SSN ID" data-toggle="tooltip"
+                        data-placement="right" title="Enter SSN ID">
+                    <div class="alert alert-danger" *ngIf="(Patient_SSNID.touched)&&(Patient_SSNID.invalid)"
+                        style="margin-top: auto;">
+                        <span *ngIf="Patient_SSNID.errors.required">SSN ID is required</span>
+                        <span *ngIf="(!Patient_SSNID.errors.Max) && (!Patient_SSNID.errors.required)">SSN ID must be 9
+                            digits</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="name">Patient Name</label>
+                    <input pattern="[a-z A-Z  ]*" onkeypress="if (this.value.length > 25) return false;"
+                        class="form-control" formControlName="patient_Name" data-toggle="tooltip" data-placement="right"
+                        title="Enter Patient Name">
+                    <div class="alert alert-danger" *ngIf="(Patient_Name.touched) && (Patient_Name.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_Name.errors.required">Patient Name is Required</span>
+                        <span *ngIf="Patient_Name.errors.maxlength">Name is too long </span>
+                        <span *ngIf="Patient_Name.errors.pattern">Name should only Alphabets</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Patient Age</label>
+                    <input type="number" onkeypress="if (this.value.length > 2) return false;" class="form-control"
+                        formControlName="patient_Age" data-toggle="tooltip" data-placement="right" title="Enter Age">
+                    <div class="alert alert-danger" *ngIf="(Patient_Age.touched) && (Patient_Age.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_Age.errors.required">Age is Required</span>
+                        <span *ngIf="(!Patient_Age.errors.Max)&&(!Patient_Age.errors.required)">Age is invalid</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date Of Admission</label>
+                    <input type="date" class="form-control" formControlName="patient_DOA" data-toggle="tooltip"
+                        data-placement="right" title="Enter Date">
+                    <div class="alert alert-danger" *ngIf="(Patient_DOA.touched) && (Patient_DOA.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_DOA.errors.required">Date is Required</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomtype">Type of bed</label>
+                    <select class="form-control" formControlName="patient_TOB" data-toggle="tooltip"
+                        data-placement=" right" title="Select Type of Bed">
+                        <option value="null">--Select Room--</option>
+                        <option value="General">General</option>
+                        <option value="Semi">Semi</option>
+                        <option value="Single">Single</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="(Patient_TOB.touched) && (Patient_TOB.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_TOB.errors.required">Please select the type of Bed</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input pattern="[a-z A-Z 0-9 ,./ ]*" onkeypress="if (this.value.length > 100) return false;"
+                        class="form-control" formControlName="patient_Address" data-toggle="tooltip"
+                        data-placement="right" title="Enter Address">
+                    <div class="alert alert-danger" *ngIf="(Patient_Address.touched) && (Patient_Address.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_Address.errors.required">Address is Required</span>
+                        <span *ngIf="(!Patient_Address.errors.maxlength)&&(!Patient_Address.errors.required)">Address
+                            invalid</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input pattern="[a-z A-Z ]*" onkeypress="if (this.value.length > 20) return false;"
+                        class="form-control" formControlName="patient_State" data-toggle="tooltip"
+                        data-placement="right" title="Enter State Name">
+                    <div class="alert alert-danger" *ngIf="(Patient_State.touched) && (Patient_State.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_State.errors.required">State name is Required</span>
+                        <span *ngIf="(Patient_State.errors.maxlength)&&(!Patient_State.errors.required)">State name is
+                            invalid</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" formControlName="patient_City" data-toggle="tooltip"
+                        data-placement="right" title="Enter City Name">
+                    <div class="alert alert-danger" *ngIf="(Patient_City.touched) && (Patient_City.invalid)"
+                        style="margin-top: 5px;">
+                        <span *ngIf="Patient_City.errors.required">City name is Required</span>
+                        <span *ngIf="(Patient_City.errors.maxlength)&&(!Patient_City.errors.required)">City name is
+                            invalid</span>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!patient_Create_form.valid" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-success ">Reset</button>
+                <!-- <div [hidden]="submitted">
+                    <h4>Student Added SuccessFully!</h4>
+                </div> -->
+            </form>
+            
+
+        </div>
+    </div>
+
+
+</div>

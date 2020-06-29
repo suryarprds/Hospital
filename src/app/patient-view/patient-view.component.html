@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h3> View Patient</h3>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <thead class="thead-light">
+                <tr>
+                    <th>Patient ID</th>
+                    <th> Name</th>
+                    <th> Age</th>
+                    <th> Address</th>
+                    <th> DOJ</th>
+                    <th> TypeOfRoom</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients ">
+                    <td>{{patient.pat_id}}</td>
+                    <td>{{patient.pat_name}}</td>
+                    <td>{{patient.pat_age}}</td>
+                    <td>{{patient.pat_address}}</td>
+                    <td>{{patient.pat_doj}}</td>
+                    <td>{{patient.pat_rtype}}</td>
+                </tr>
+            </tbody><br>
+        </table>
+    </div>
+</div>
+
