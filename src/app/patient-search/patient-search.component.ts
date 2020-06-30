@@ -5,11 +5,11 @@ import { Observable, Subject } from "rxjs";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-patient-update',
-  templateUrl: './patient-update.component.html',
-  styleUrls: ['./patient-update.component.css']
+  selector: 'app-patient-search',
+  templateUrl: './patient-search.component.html',
+  styleUrls: ['./patient-search.component.css']
 })
-export class PatientUpdateComponent implements OnInit {
+export class PatientSearchComponent implements OnInit {
 
   constructor(private patientservice: PatientService) { }
   patient:Patient=new Patient
@@ -79,5 +79,7 @@ export class PatientUpdateComponent implements OnInit {
   get Patient_City() {
     return this.patient_Create_form.get('patient_City');
   }
+
+
 
 }

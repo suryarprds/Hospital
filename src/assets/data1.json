@@ -1,0 +1,13 @@
+
+{
+    "pat_id": 123456789,
+"pat_ssn": 436,
+"pat_name": "aaa",
+"pat_age": 21,
+"pat_doj": "2000-11-19",
+"pat_rtype": "Single",
+"pat_address": "Chennai",
+"pat_state": "TN",
+"pat_city": "Erode"
+
+}
