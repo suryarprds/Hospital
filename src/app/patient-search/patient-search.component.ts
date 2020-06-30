@@ -5,11 +5,11 @@ import { Observable, Subject } from "rxjs";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-patient-delete',
-  templateUrl: './patient-delete.component.html',
-  styleUrls: ['./patient-delete.component.css']
+  selector: 'app-patient-search',
+  templateUrl: './patient-search.component.html',
+  styleUrls: ['./patient-search.component.css']
 })
-export class PatientDeleteComponent implements OnInit {
+export class PatientSearchComponent implements OnInit {
 
   constructor(private patientservice: PatientService) { }
   patient:Patient=new Patient
@@ -52,7 +52,7 @@ export class PatientDeleteComponent implements OnInit {
     this.save();
   }
   save() {
-    this. patientservice.deletePatient(this.patient)  
+    this. patientservice.updatePatient(this.patient)  
       .subscribe(data => console.log(data), error => console.log("Server Not found"));  
   }
   get Patient_ID() {

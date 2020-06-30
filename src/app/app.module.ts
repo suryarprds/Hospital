@@ -12,6 +12,7 @@ import {DataTablesModule} from 'angular-datatables';
 import { MedicineCreateComponent } from './medicine-create/medicine-create.component';
 import { MedicineUpdateComponent } from './medicine-update/medicine-update.component';
 import { MedicineViewComponent } from './medicine-view/medicine-view.component';
+import { PatientSearchComponent } from './patient-search/patient-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MedicineViewComponent } from './medicine-view/medicine-view.component';
     PatientDeleteComponent,
     MedicineCreateComponent,
     MedicineUpdateComponent,
-    MedicineViewComponent
+    MedicineViewComponent,
+    PatientSearchComponent
   ],
   imports: [
     BrowserModule,
